@@ -2,9 +2,7 @@ Hacklender::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  match 'diary_entries' => 'diary_entries#index'
-  match 'diary_entries/new' => 'diary_entries#new'
-
+resources :diary_entries
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

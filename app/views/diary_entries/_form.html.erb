@@ -1,0 +1,31 @@
+<%= form_for(@diary_entry) do |d| %>
+
+<% if @diary_entry.errors.any? %>
+ <h2>Something went wrong</h2> 
+ <ul>
+    <% @diary_entry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+ </ul>
+  <% end %>
+
+<div class="field">
+	<%= d.label :title %> <br />
+	<%= d.text_field :title %>
+</div>
+
+<div class="field red">
+	<%= d.label :description %> <br />
+	<%= d.text_area :description %>
+</div>
+
+<div class="field">
+	<%= d.label :mood %> <br />
+	<%= d.select :mood, ["Happy","Very Happy","Vexed"] %>
+</div>
+
+<div class="actions">
+	<%= d.submit "Submit" %>
+</div>
+
+<% end %>
